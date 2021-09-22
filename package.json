@@ -1,0 +1,31 @@
+{
+  "name": "challenge-jr",
+  "version": "1.0.0",
+  "description": "You will create a smart contract named `RockPaperScissors` whereby:   Alice and Bob can play the classic game of rock, paper, scissors using ERC20 (of your choosing).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agusduha/challenge-jr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agusduha/challenge-jr/issues"
+  },
+  "homepage": "https://github.com/agusduha/challenge-jr#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.6",
+    "hardhat": "^2.6.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.1"
+  }
+}
