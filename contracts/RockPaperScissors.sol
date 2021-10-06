@@ -2,7 +2,6 @@
 pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "hardhat/console.sol";
 
 contract RockPaperScissors {
     enum Hand {
@@ -52,22 +51,13 @@ contract RockPaperScissors {
     address constant ZERO_ADDRESS = 0x0000000000000000000000000000000000000000;
     uint256 constant deadline = 1 days;
 
-    modifier isValidHand(Hand _hand) {
-        require(
-            _hand == Hand.ROCK || _hand == Hand.PAPER || _hand == Hand.SCISSORS,
-            "The hand is not valid"
-        );
-        _;
-    }
-
     function createGame(
         address _token,
         address _player2,
         uint256 _bet,
         Hand _hand,
         bool _useBalance
-    ) external isValidHand(_hand) {
-        console.log("Bet is %s tokens", _bet);
+    ) external {
         Game memory game = Game({
             token: IERC20(_token),
             player1: msg.sender,
@@ -90,7 +80,7 @@ contract RockPaperScissors {
         uint256 _gameId,
         Hand _hand,
         bool _useBalance
-    ) external isValidHand(_hand) {
+    ) external {
         require(_gameId < gamesCounter, "Game is not created");
         Game storage game = games[_gameId];
 
